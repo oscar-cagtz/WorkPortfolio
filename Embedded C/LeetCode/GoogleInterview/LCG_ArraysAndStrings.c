@@ -1,20 +1,16 @@
 /**********************************************************************
  *
- *        NAME:   C_CodingProject.c
+ *        NAME:   LCG_ArraysAndStrings.c
  *
  * DESCRIPTION:   The objective of this file is to document the
- *                author's coding style and have a cheat sheet for the
- *                coding standards and syntax of C with a baseline
- *                project that can be used for demos and exercises for
- *                the C language.
+ *                author's responses to the Arrays & Strings exercises
+ *                of the LeetCode Google Interview section.
  *
  *      AUTHOR:   Oscar Alberto Carreño Gutierrez
  *
  *        DATE:   January 9th, 2024
  *
  **********************************************************************/
-#ifndef C_CODINGPROJECT_C
-#define C_CODINGPROJECT_C
 
 /**********************************************************************
  * INCLUDES
@@ -30,26 +26,39 @@
 #include <time.h>
 
 // Project Includes
-#ifndef C_CODINGPROJECT_H
-   #include "C_CodingProject.h"
-#endif
+#include "C_CodingProject.h"
 
-#ifndef C_FUNCTIONPROTOTYPES_H
-   #include "C_FunctionPrototypes.h"
-#endif
+// LeetCode Includes
+#include "LCG_ArraysAndStrings.h"
+
+/**********************************************************************
+ * DATA DEFINITIONS
+ **********************************************************************/
+
 
 
 /**********************************************************************
  * FUNCTION DEFINITIONS
  **********************************************************************/
 
+// Longest Substring Without Repeating Characters
+OC_SINT32 lengthOfLongestSubstring(OC_UINT8 *StringTest)
+{
+
+
+
+   return OC_FALSE;
+}
+
 
 /**********************************************************************
  * MAIN APPLICATION
  **********************************************************************/
-OC_SINT32 main(void)
+int main(void)
 {
-   printf("HELLO WORLD");
-}
+   OC_UINT8 StringTest[10] = "sstringg";
+   
+   // Google Interview LeetCode: Arrays And String Exercises
+   lengthOfLongestSubstring(&StringTest);
 
-#endif // C_CODINGPROJECT_C
+}

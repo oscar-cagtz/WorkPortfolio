@@ -1,6 +1,18 @@
 {
    "files.associations": {
       "stdio.h": "c",
-      "math.h": "c"
+      "math.h": "c",
+      "lcg_linkedlists.h": "c",
+      "time.h": "c",
+      "c_codingproject.h": "c",
+      "lcg_treesandgraphs.h": "c",
+      "lcg_dynamicprogramming.h": "c",
+      "lcg_sortingandsearching.h": "c",
+      "lcg_interviewprocess.h": "c",
+      "lcg_arraysandstrings.h": "c",
+      "lcg_recursion.h": "c",
+      "lcg_others.h": "c",
+      "string.h": "c",
+      "c_functionprototypes.h": "c"
    }
 }
