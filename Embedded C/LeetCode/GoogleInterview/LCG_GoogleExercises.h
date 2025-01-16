@@ -19,8 +19,10 @@
  * INCLUDES
  **********************************************************************/
 
-// Project Includes
-#include "C_CodingProject.h"
+// Project Includesß
+#ifndef C_CODINGPROJECT_H
+   #include "../../C_CodingProject.h"
+#endif
 
 /**********************************************************************
  * DATA DEFINITIONS

@@ -23,6 +23,8 @@
  * DATA DEFINITIONS
  **********************************************************************/
 
+// Datatype Definitions
+
 /* NOTE: I'm redefining types just to have a cheatsheet of the
  *       sizes and to compress the long type names into an easy-
  *       to-write redefinition. These should be used project-wide.
@@ -44,11 +46,41 @@ typedef unsigned long         OC_UINT64;  // 8 bytes |                          
 typedef float                 OC_FLOAT32; // 4 bytes |                  3.4E +/- 38 (7 digits)                 | %f
 typedef double                OC_FLOAT64; // 8 bytes |                 1.7E +/- 308 (15 digits)                | %d
 
-typedef enum OC_BOOL_D
+typedef enum OC_BOOL_D // NOTE: We're enumerating this definition to use it as a datatype instead of just defining it below.
 {
    OC_FALSE = 0,
    OC_TRUE  = 1
 } OC_BOOL;
+
+// Boolean Definitions
+#define AND          &&
+#define OR           ||
+#define IS           =
+#define NOT          !
+#define MOD          %
+#define LESSTHAN     <
+#define MORETHAN     >
+#define LESSOREQUAL  <=
+#define MOREOREQUAL  >=
+#define EQUALS       ==
+#define NOTEQUALS    !=
+#define BAND         &
+#define BOR          |
+#define BXOR         ^
+#define BNOT         ~
+#define BLSHIFT      <<
+#define BRSHIFT      >>
+
+// Math Definitions
+#define ZERO         0
+#define PI           3.14159265                 // Definition of PI
+#define E            2.71828182                 // Definition of Euler's constant
+#define RAD2DEG(x)   ((x) / PI * 180)           // Conver radians to degrees
+#define DEG2RAD(x)   ((x) * PI / 180)           // Convert degrees to radians
+#define MIN(x, y)    (((x) < (y)) ?  (x) : (y)) // Minimum value of the inputs
+#define MAX(x, y)    (((x) > (y)) ?  (x) : (y)) // Maximum value of the inputs
+#define ABS(x)       (((x) <   0) ? -(x) : (x)) // Absolute value of the input
+#define DIFF(a,b)    ABS((a)-(b))               // Absolute difference between inpus
 
 
 /**********************************************************************
