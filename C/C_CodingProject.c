@@ -20,23 +20,9 @@
  * INCLUDES
  **********************************************************************/
 
-// Standard Includes
-#include <ctype.h>
-#include <limits.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 // Project Includes
-#ifndef C_CODINGPROJECT_H
-   #include "C_CodingProject.h"
-#endif
-
-#ifndef C_FUNCTIONPROTOTYPES_H
-   #include "C_FunctionPrototypes.h"
-#endif
+#include "C_CodingProject.h"
+#include "C_FunctionPrototypes.h"
 
 
 /**********************************************************************
@@ -47,9 +33,10 @@
 /**********************************************************************
  * MAIN APPLICATION
  **********************************************************************/
-OC_SINT32 main(void)
+OC_SINT32_T main(void)
 {
    printf("HELLO WORLD");
 }
+
 
 #endif // C_CODINGPROJECT_C
