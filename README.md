@@ -45,19 +45,17 @@ All the code mentioned and included in this repository is my own work. It reflec
 Feel free to browse through each project and explore the code. Each section includes a brief description of the project, the skills demonstrated, and a link to the respective repository or code sample. If you have any questions or need further information, don't hesitate to reach out!
 
 ---
----
----
----
----
----
----
----
----
----
----
----
----
----
+
+
+
+
+
+
+
+
+
+
+
 
 ## Future languages:
 
