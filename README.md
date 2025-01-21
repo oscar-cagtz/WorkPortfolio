@@ -17,7 +17,7 @@ PSA (January 20th, 2025): As of today, my main focus is centered mainly in C, wi
 ### C
 | Subject:       | Description:                                                                     | Skills Demonstrated:                        | Link:                                                                 |
 |----------------|----------------------------------------------------------------------------------|---------------------------------------------|-----------------------------------------------------------------------|
-| Main C Project | This folder contains all the main development I've documented for the C language | Data Structures, Pointers, Project Setup    | [Code]([https://github.com/oscar-cagtz/WorkPortfolio/tree/main/C] |
+| Main C Project | This folder contains all the main development I've documented for the C language | Data Structures, Pointers, Project Setup    | [Code](https://github.com/oscar-cagtz/WorkPortfolio/tree/main/C) |
 
 
 ### Go
