@@ -76,10 +76,12 @@ typedef enum OC_BOOL_D // NOTE: We're enumerating this definition to use it as a
 
 typedef enum OC_RESULT_D // NOTE: These enumerals are just for error handling this project, they're not standarized outside of 0.
 {
-   OC_ERR_UNDEF = -1, // Undefined behavior error.
-   OC_NO_ERROR  = 0,  // No error scenario.
-   OC_ERR_OORL  = 1,  // Out-of-range Low error scenario.
-   OC_ERR_OORH  = 2   // Out-of-range High error scenario.
+   OC_ERR_UNDEF  = -1, // Undefined behavior error.
+   OC_NO_ERROR   = 0,  // No error scenario. (Default value, doesn't mean successful)
+   OC_SUCCESSFUL = 1,  // Successfull scenario result.
+   OC_ERR_OORL   = 2,  // Out-of-range Low error scenario.
+   OC_ERR_OORH   = 3,  // Out-of-range High error scenario.
+   OC_ERR_VNF    = 4   // Value/Parameter Not Found.
 } OC_RESULT_T;
 
 // Boolean Definitions

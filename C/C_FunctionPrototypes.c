@@ -69,13 +69,13 @@ OC_SLNODE_T* CreateNodeSL(OC_SINT32_T inputValue)
 
 /**********************************************************************
  *
- *        NAME:   DeleteNodeByValSL
+ *        NAME:   SearchNodeByValSL
  *
  * DESCRIPTION:   This function searches for a singly-linked list node
- *                by it's value, searching an input reference value.
+ *                by it's value, using an input reference value.
  *
  *      INPUTS:   headNode   - (struct) Pointer to the list's head node.
- *                inputValue - (sint32) Value to be assigned to the node.
+ *                inputValue - (sint32) Value to be searched in the list.
  *
  *     OUTPUTS:   tempNode - (struct) Return the matching node, else NULL.
  * 
@@ -86,42 +86,73 @@ OC_SLNODE_T* CreateNodeSL(OC_SINT32_T inputValue)
 OC_SLNODE_T* SearchNodeByValSL(OC_SLNODE_T* headNode,
                                OC_SINT32_T  inputValue)
 {
+   // Create a temporal singly-listed node pointing to the list's head.
    OC_SLNODE_T* tempNode = headNode;
 
+   // While the temporal node is not NULL (meaning that it's the end of
+   // the list) traverse the list until you find a value that matches.
    while (tempNode != NULL)
    {
+      // If the temporal node's value is equal to the input value, end
+      // the function and return the matching node immediately.
       if (tempNode->nodeValue == inputValue)
       {
          return tempNode;
       }
+      
+      // If the node's value did not match, move to the next one.
       tempNode = tempNode->nextNode;
    }
 
+   // If no node was found return a NULL result.
    return NULL;
 }
 
 
-// Function to print the linked list
+/**********************************************************************
+ *
+ *        NAME:   PrintLinkedListSL
+ *
+ * DESCRIPTION:   This function prints a singly-linked list starting
+ *                from the input head node.
+ *
+ *      INPUTS:   headNode - (struct) Pointer to the list's head node.
+ *
+ *     OUTPUTS:   resultCode - (enum) Returns the function result code.
+ *
+ *  COMPLEXITY:   Time  - O(n): Traversing the while loop takes (n) time.
+ *                Space - O(1): All operations require a constant space.
+ *
+ **********************************************************************/
 OC_RESULT_T PrintLinkedListSL(OC_SLNODE_T* headNode)
 {
+   // Create a temporal singly-listed node pointing to the list's head.
    OC_SLNODE_T* tempNode = headNode;
+   // Create a response code variable to return once the function exits.
+   OC_RESULT_T  resCode  = OC_NO_ERROR;
 
+   // While the temporal node is not NULL (meaning that it's the end of
+   // the list) traverse the list until you find a value that matches.
    while (tempNode != NULL)
    {
+      // Print the current node's value as a a decimal integer (%d).
       printf("%d", tempNode->nodeValue);
 
+      // Move to the next node once you have printed the current.
       tempNode = tempNode->nextNode;
 
+      // If it was not the last node print an arrow for stylization.
       if (tempNode != NULL)
       {
          printf(" -> ");
       }
    }
 
+   // Once the whole list has been printed, add a newline and exit.
    printf("\n");
 
    // Return the function result code.
-   return OC_NO_ERROR;
+   return resCode;
 }
 
 
@@ -146,6 +177,8 @@ OC_RESULT_T InsertEndNodeSL(OC_SLNODE_T** headNode,
 {
    // Create a new singly-listed node with the input value first.
    OC_SLNODE_T* newNode = CreateNodeSL(inputValue);
+   // Create a response code variable to return once the function exits.
+   OC_RESULT_T  resCode = OC_NO_ERROR;
 
    // If the head of the list is NULL it means you're inserting the
    // newly-created node at the start of the list so make it the head.
@@ -177,7 +210,7 @@ OC_RESULT_T InsertEndNodeSL(OC_SLNODE_T** headNode,
    }
 
    // Return the function result code.
-   return OC_NO_ERROR;
+   return resCode;
 }
 
 
@@ -202,6 +235,7 @@ OC_RESULT_T InsertHeadNodeSL(OC_SLNODE_T** headNode,
 {
    // Create a new singly-listed node with the input value first.
    OC_SLNODE_T* newNode = CreateNodeSL(inputValue);
+   // Create a response code variable to return once the function exits.
    OC_RESULT_T  resCode = OC_NO_ERROR;
 
    // Make the next node of the new node the list's head and then set
@@ -237,18 +271,30 @@ OC_RESULT_T InsertHeadNodeSL(OC_SLNODE_T** headNode,
 OC_RESULT_T DeleteNodeByValSL(OC_SLNODE_T** headNode,
                               OC_SINT32_T   inputValue)
 {
+   // Create a temporal singly-listed node pointing to the list's head.
    OC_SLNODE_T* tempNode = *headNode;
+   // Create a previous node struct to keep track of the node's position.
    OC_SLNODE_T* prevNode = NULL;
+   // Create a response code variable to return once the function exits.
    OC_RESULT_T  resCode  = OC_NO_ERROR;
 
+   // First check if the temporal node is not NULL and the value matches
+   // the input value to avoid traversing the node if it's at the start.
    if (tempNode != NULL && 
       tempNode->nodeValue == inputValue)
    {
+      // If the value matches, change the head of the list to the next
+      // node and immediately delete it by freeing its memory.
       *headNode = tempNode->nextNode;
       free(tempNode);
-      return OC_NO_ERROR;
+
+      // Exit the function and return a successful response code.
+      resCode = OC_SUCCESSFUL;
+      return resCode;
    }
 
+   // If the value value was not at the start of the list, traverse each
+   // node until you find a value that matches the input value.
    while (tempNode != NULL && 
           tempNode->nodeValue != inputValue)
    {
@@ -256,8 +302,15 @@ OC_RESULT_T DeleteNodeByValSL(OC_SLNODE_T** headNode,
       tempNode = tempNode->nextNode;
    }
 
-   if (tempNode == NULL) return OC_NO_ERROR;
+   // If the temporal node was pointing to a NULL, the list is empty and
+   // no node will be found to be deleted, return a value not found code.
+   if (tempNode == NULL)
+   {
+      return OC_ERR_VNF;
+   }
 
+   // Point the previous node's next node link to the to-be-deleted temp
+   // node to effectively delete it from the list and free its memory.
    prevNode->nextNode = tempNode->nextNode;
    free(tempNode);
 
@@ -283,17 +336,28 @@ OC_RESULT_T DeleteNodeByValSL(OC_SLNODE_T** headNode,
  **********************************************************************/
 OC_RESULT_T DeleteLinkedListSL(OC_SLNODE_T** headNode)
 {
+   // Create a temporal singly-listed node pointing to the list's head.
    OC_SLNODE_T* tempNode = *headNode;
+   // Create a response code variable to return once the function exits.
    OC_RESULT_T  resCode  = OC_NO_ERROR;
 
-   // 
+   // While the temporal node is not NULL (meaning that it's the end of
+   // the list) traverse the list to delete each node properly.
    while (tempNode != NULL)
    {
+      // Save the next node before deleting the link to it from the
+      // current temporal node.
       OC_SLNODE_T* nextNode = tempNode->nextNode;
+
+      // Free the memory allocated to the current temporal node.
       free(tempNode);
+
+      // Move the current temporal node to the next node to delete the
+      // next element in the following while cycle.
       tempNode = nextNode;
    }
 
+   // Save the head node to a NULL pointer to indicate an empty list.
    *headNode = NULL;
 
    // Return the function result code.
@@ -303,21 +367,40 @@ OC_RESULT_T DeleteLinkedListSL(OC_SLNODE_T** headNode)
 
 /* Doubly-linked List Definitions *************************************/
 
-// Singly-linked List Node Creation Function Definition
+/**********************************************************************
+ *
+ *        NAME:   CreateNodeDL
+ *
+ * DESCRIPTION:   This function creates a doubly-linked list node with
+ *                the input value and initializes its positions to NULL.
+ *
+ *      INPUTS:   inputValue - (sint32) Value to be assigned to the node.
+ *
+ *     OUTPUTS:   newNode - (struct) Newly created node to be returned.
+ *
+ *  COMPLEXITY:   Time  - O(1): All operations require a constant time.
+ *                Space - O(1): All operations require a constant space.
+ *
+ **********************************************************************/
 OC_DLNODE_T* CreateNodeDL(OC_SINT32_T inputValue)
 {
    // Allocate memory of the size of a DL list node and create it.
     OC_DLNODE_T *newNode = (OC_DLNODE_T*)malloc(sizeof(OC_DLNODE_T));
 
-   // Assign the input value to the node value and set the next/prev node
-   // pointers to NULL as it has not been placed in the list yet but we
-   // want to initialize then properly, then return this new node back.
+   // Assign the node value to the input's value and set the next/prev
+   // node pointers to NULL as it has not been placed in the list yet but
+   // we want to initialize them properly, then return this new node back.
+   // prevNode:     nodeValue:      nextNode:
+   // +------+    +------------+    +------+
+   // | NULL | => | inputValue | => | NULL |
+   // +------+    +------------+    +------+
    newNode->nodeValue = inputValue;
    newNode->nextNode  = NULL;
    newNode->prevNode  = NULL;
 
    return newNode;
 }
+
 
 /* Trees & Graphs Definitions *****************************************/
 
