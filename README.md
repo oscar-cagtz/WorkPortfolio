@@ -6,7 +6,7 @@ Welcome to my GitHub work portfolio! This repository showcases various projects 
 
 This is the work portfolio of **Oscar Alberto Carreño Gutierrez**, I am an embedded software/systems engineer with over 5 1/2 years of industry experience in the software world. 
 
-I am a passionate and dedicated developer with experience in multiple programming languages and technologies. My main skills are related to the embedded world, specifically related to C/C++, but this repository is planned as a recollection fo all the work and side projects I've done in different programming/scripting languages.
+I am a passionate and dedicated developer with experience in multiple programming languages and technologies. My main skills are related to the embedded world, specifically related to C/C++, but this repository is planned as a recollection for all the work and side projects I've done in different programming/scripting languages.
 
 This portfolio spans various projects that highlight my ability to learn, adapt, and innovate. Below, you will find tables summarizing my progress and proficiency in each programming language, helping you understand what to look for as you explore my work.
 
