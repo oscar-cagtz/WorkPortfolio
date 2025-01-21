@@ -36,7 +36,6 @@
  **********************************************************************/
 
 
-
 /**********************************************************************
  * FUNCTION DEFINITIONS
  **********************************************************************/
@@ -90,4 +89,6 @@ int main(void)
    testResult IS LengthOfLongestSubstring(stringTest);
 
    printf("Longest Substring Length: %i\n", testResult);
+
+   return OC_NO_ERROR;
 }
