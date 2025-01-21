@@ -12,12 +12,12 @@ This portfolio spans various projects that highlight my ability to learn, adapt,
 
 ## Progress Overview
 
-PSA (January 20th, 2025): As of today, my main focus is center mainly in C, with learning focused on Go, Python and Switft. Other languages will be added out of the _Pending Languages_ folder once the main languages feel as having sufficient effort put into them, I'm leaving them in the README as a TBD section.
+PSA (January 20th, 2025): As of today, my main focus is centered mainly in C, with future learning focused on Go, Python and Switft. Other languages will be added out of the _Pending Languages_ folder once the main languages feel as having sufficient effort put into them, I'm leaving them in the README as a TBD section.
 
 ### C
-| Subject:       | Description:                         | Skills Demonstrated:                        | Link:     |
-|----------------|--------------------------------------|---------------------------------------------|-----------|
-| TBD            | TBD                                  | TBD                                         | [Code](#) |
+| Subject:       | Description:                                                                     | Skills Demonstrated:                        | Link:                                                                 |
+|----------------|----------------------------------------------------------------------------------|---------------------------------------------|-----------------------------------------------------------------------|
+| Main C Project | This folder contains all the main development I've documented for the C language | Data Structures, Pointers, Project Setup    | [Code]([#](https://github.com/oscar-cagtz/WorkPortfolio/tree/main/C)) |
 
 
 ### Go
