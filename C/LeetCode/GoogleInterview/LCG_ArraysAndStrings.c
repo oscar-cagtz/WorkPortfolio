@@ -16,15 +16,6 @@
  * INCLUDES
  **********************************************************************/
 
-// Standard Includes
-#include <ctype.h>
-#include <limits.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 // Project Includes
 #include "../../C_CodingProject.h"
 
@@ -41,24 +32,24 @@
  **********************************************************************/
 
 // Longest Substring Without Repeating Characters
-OC_SINT32 LengthOfLongestSubstring(OC_UINT8 stringTest[])
+OC_SINT32_T LengthOfLongestSubstring(OC_UINT8_T stringTest[])
 {
    /* NOTE: I am casting the stringTest to a const char* to get the compiler
     *       to stop complaining, however the strlen() function works just fine
     *       with the pass by reference string pointer as an "unsigned char*".
     */
-   OC_UINT8 stringSize           IS strlen((const char*)stringTest);
-   OC_UINT8 charToNextIndex[256] IS {ZERO};
-   OC_UINT8 maxLength            IS ZERO;
-   OC_UINT8 leftPosition         IS ZERO;
-   OC_UINT8 rightPosition        IS ZERO;
+   OC_UINT8_T stringSize           IS strlen((const char*)stringTest);
+   OC_UINT8_T charToNextIndex[256] IS {ZERO};
+   OC_UINT8_T maxLength            IS ZERO;
+   OC_UINT8_T leftPosition         IS ZERO;
+   OC_UINT8_T rightPosition        IS ZERO;
 
    // Move the right-positioned index from the 0 position while the value is smaller
    // than the string size by 1 each cycle.
    for (rightPosition IS ZERO; rightPosition LESSTHAN stringSize; rightPosition++)
    {
       // Set the current character to the right-positioned value in the test string.
-      OC_UINT8 charIndex = (OC_UINT8)stringTest[rightPosition];
+      OC_UINT8_T charIndex = (OC_UINT8_T)stringTest[rightPosition];
 
       if (charToNextIndex[charIndex] MORETHAN ZERO)
       {
@@ -82,8 +73,8 @@ OC_SINT32 LengthOfLongestSubstring(OC_UINT8 stringTest[])
  **********************************************************************/
 int main(void)
 {
-   OC_UINT8 stringTest[10] IS "sstringg";
-   OC_UINT8 testResult     IS ZERO;
+   OC_UINT8_T stringTest[10] IS "sstringg";
+   OC_UINT8_T testResult     IS ZERO;
 
    // Google Interview LeetCode: Arrays And String Exercises
    testResult IS LengthOfLongestSubstring(stringTest);

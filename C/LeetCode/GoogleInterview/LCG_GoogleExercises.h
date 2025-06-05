@@ -2,27 +2,23 @@
  *
  *        NAME:   LCG_GoogleExercises.h
  *
- * DESCRIPTION:   The objective of this file is to define the main
- *                definitions and types to be used by all of the
- *                LeetCode Google Interview exercises as function
- *                declarations accesible by the whole project.
+ * DESCRIPTION:   The objective of this file is to put all the main
+ *                definitions and types to be used by the LeetCode
+ *                Google Interview exercises as function declarations
+ *                accesible by the whole project.
  *
  *      AUTHOR:   Oscar Alberto Carreño Gutierrez
  *
- *        DATE:   January 9th, 2024
+ *        DATE:   January 21th, 2024
  *
  **********************************************************************/
-#ifndef C_FUNCTIONPROTOTYPES_H
-#define C_FUNCTIONPROTOTYPES_H
+#ifndef LCG_GOOGLEEXERCISES_H
+#define LCG_GOOGLEEXERCISES_H
 
 /**********************************************************************
  * INCLUDES
  **********************************************************************/
 
-// Project Includesß
-#ifndef C_CODINGPROJECT_H
-   #include "../../C_CodingProject.h"
-#endif
 
 /**********************************************************************
  * DATA DEFINITIONS
@@ -33,4 +29,5 @@
  * FUNCTION DECLARATIONS
  **********************************************************************/
 
-#endif // C_FUNCTIONPROTOTYPES_H
+
+#endif // LCG_GOOGLEEXERCISES_H

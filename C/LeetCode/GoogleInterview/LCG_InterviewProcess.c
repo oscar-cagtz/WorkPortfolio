@@ -8,28 +8,22 @@
  *
  *      AUTHOR:   Oscar Alberto Carreño Gutierrez
  *
- *        DATE:   January 15th, 2024
+ *        DATE:   January 21th, 2024
  *
  **********************************************************************/
+#ifndef LCG_INTERVIEWPROCESS_C
+#define LCG_INTERVIEWPROCESS_C
 
 /**********************************************************************
  * INCLUDES
  **********************************************************************/
 
-// Standard Includes
-#include <ctype.h>
-#include <limits.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 // Project Includes
 #include "../../C_CodingProject.h"
 
 // LeetCode Includes
-#include "LCG_InterviewProcess.h"
+#include "LCG_DynamicProgramming.h"
+
 
 /**********************************************************************
  * DATA DEFINITIONS
@@ -44,9 +38,12 @@
 /**********************************************************************
  * MAIN APPLICATION
  **********************************************************************/
-int main(void)
+OC_SINT32_T main(void)
 {
-   printf("HELLO WORLD\n");
+   OC_UINT8_T resultCode IS OC_NO_ERROR;
 
-   return OC_NO_ERROR;
+   printf("%i\n", resultCode);
 }
+
+
+#endif // LCG_DYNAMICPROGRAMMING_C

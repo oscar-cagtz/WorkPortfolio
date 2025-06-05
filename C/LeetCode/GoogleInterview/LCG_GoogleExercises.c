@@ -1,39 +1,30 @@
 /**********************************************************************
  *
- *        NAME:   C_CodingProject.c
- * DESCRIPTION:   The objective of this file is to document the
- *                author's coding style and have a cheat sheet
- *                for the coding standards and syntax of C with
- *                a baseline project that can be used for demos
- *                and exercises for the C language.
+ *        NAME:   LCG_GoogleExercises.c
+ *
+ * DESCRIPTION:   The objective of this file is to put all the main
+ *                definitions and types to be used by the LeetCode
+ *                Google Interview exercises as usable functions
+ *                accesible by the whole project.
+ *
  *      AUTHOR:   Oscar Alberto Carreño Gutierrez
- *        DATE:   January 9th, 2024
+ *
+ *        DATE:   January 21th, 2024
  *
  **********************************************************************/
+#ifndef LCG_GOOGLEEXERCISES_C
+#define LCG_GOOGLEEXERCISES_C
+
 
 /**********************************************************************
  * INCLUDES
  **********************************************************************/
 
-// Standard Includes
-#include <ctype.h>
-#include <limits.h>
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-
 // Project Includes
-#ifndef C_CODINGPROJECT_H
-   #include "../../C_CodingProject.h"
-#endif
+#include "../../C_CodingProject.h"
 
-/**********************************************************************
- * EXERCISE HEADERS
- **********************************************************************/
-
-// LeetCode Google Interview Includes
+// LeetCode Includes
+#include "LCG_GoogleExercises.h"
 #include "LCG_InterviewProcess.h"
 #include "LCG_ArraysAndStrings.h"
 #include "LCG_LinkedLists.h"
@@ -45,6 +36,11 @@
 
 
 /**********************************************************************
+ * DATA DEFINITIONS
+ **********************************************************************/
+
+
+/**********************************************************************
  * FUNCTION DEFINITIONS
  **********************************************************************/
 
@@ -52,7 +48,12 @@
 /**********************************************************************
  * MAIN APPLICATION
  **********************************************************************/
-OC_SINT32 main(void)
+OC_SINT32_T main(void)
 {
-   printf("HELLO WORLD");
+   OC_UINT8_T resultCode IS OC_NO_ERROR;
+
+   printf("%i\n", resultCode);
 }
+
+
+#endif // LCG_GOOGLEEXERCISES_C
